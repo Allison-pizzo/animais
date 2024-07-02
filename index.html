@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Animais</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+    background-color: grey;
+      font-family: Arial, sans-serif;
+    }
+
+    h1{
+        font-size: 5em;
+        font-weight: bolder;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    .animal-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+     
+    }
+    .animal-list li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    
+    }
+    .animal-list li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Lista de Animais</h1>
+    <ul class="animal-list">
+      <!-- lista de animais será gerada aqui -->
+    </ul>
+  </div>
+
+  <script>
+    const animais = [
+      { nome: "Leão", especie: "Panthera leo", peso: "250 kg" },
+      { nome: "Elefante", especie: "Loxodonta africana", peso: "5.000 kg" },
+      { nome: "Girafa", especie: "Giraffa camelopardalis", peso: "800 kg" },
+      { nome: "Cachorro", especie: "Canis lupus familiaris", peso: "20 kg" },
+      { nome: "Gato", especie: "Felis catus", peso: "5 kg" },
+      { nome: "Urso", especie: "Ursus arctos", peso: "150 kg" },
+      { nome: "Macaco", especie: "Macaca mulatta", peso: "10 kg" },
+      { nome: "Cobra", especie: "Serpentes", peso: "1 kg" },
+    ];
+
+    const animalList = document.querySelector('.animal-list');
+
+    animais.forEach(animal => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+        <h2>${animal.nome}</h2>
+        <p>Espécie: ${animal.especie}</p>
+        <p>Peso: ${animal.peso}</p>
+      `;
+      animalList.appendChild(listItem);
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
